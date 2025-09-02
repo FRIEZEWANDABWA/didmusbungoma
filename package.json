@@ -1,0 +1,47 @@
+{
+  "name": "didmus-barasa-campaign",
+  "version": "1.0.0",
+  "description": "Official campaign website for Didmus Barasa's gubernatorial bid for Bungoma County 2027",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8888",
+    "build": "echo 'No build process required for static site'",
+    "deploy": "netlify deploy --prod --dir .",
+    "test": "echo 'Tests will be added in future versions'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FRIEZEWANDABWA/didmusbungoma.git"
+  },
+  "keywords": [
+    "didmus-barasa",
+    "bungoma-county",
+    "governor",
+    "campaign",
+    "kenya-politics",
+    "digital-transformation",
+    "youth-empowerment"
+  ],
+  "author": {
+    "name": "Didmus Wekesa Barasa Campaign Team",
+    "email": "info@didmusbarasa.com",
+    "url": "https://didmusbungoma.netlify.app"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "homepage": "https://didmusbungoma.netlify.app",
+  "bugs": {
+    "url": "https://github.com/FRIEZEWANDABWA/didmusbungoma/issues",
+    "email": "info@didmusbarasa.com"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
+}

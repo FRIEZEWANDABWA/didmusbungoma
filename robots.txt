@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://didmusbungoma.netlify.app/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow admin areas (if any)
+Disallow: /admin/
+Disallow: /.netlify/
+
+# Allow all pages for SEO
+Allow: /index.html
+Allow: /pages/
+Allow: /assets/

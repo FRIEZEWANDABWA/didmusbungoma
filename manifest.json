@@ -1,0 +1,61 @@
+{
+  "name": "Didmus Barasa for Governor - Bungoma County 2027",
+  "short_name": "Didmus Barasa",
+  "description": "Official campaign website for Didmus Barasa's gubernatorial bid for Bungoma County",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "categories": ["politics", "government", "news"],
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "assets/images/mini_Cropped barasa.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/barasa-500x751.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/images/barasa-500x751.jpeg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Digital Infrastructure",
+      "short_name": "Digital Hub",
+      "description": "Learn about digital transformation plans",
+      "url": "/pages/digital-infrastructure.html",
+      "icons": [
+        {
+          "src": "assets/images/mini_Cropped barasa.jpg",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Youth Empowerment",
+      "short_name": "Youth",
+      "description": "Youth programs and opportunities",
+      "url": "/pages/youth-empowerment.html",
+      "icons": [
+        {
+          "src": "assets/images/mini_Cropped barasa.jpg",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+}

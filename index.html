@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Didmus Barasa for Governor - Bungoma County 2027</title>
+    <meta name="description" content="Join Didmus Barasa's campaign for Governor of Bungoma County. Digital transformation, youth empowerment, and sustainable development for all.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Didmus Barasa">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="assets/images/mini_Cropped barasa.jpg">
+    <link rel="apple-touch-icon" href="assets/images/mini_Cropped barasa.jpg">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Didmus Barasa for Governor - Bungoma County 2027">
+    <meta property="og:description" content="Engineering Bungoma's Future through digital transformation, youth empowerment, and sustainable development.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://didmusbungoma.netlify.app">
+    <meta property="og:image" content="https://didmusbungoma.netlify.app/assets/images/barasa-500x751.jpeg">
+    <meta property="og:site_name" content="Didmus Barasa Campaign">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Didmus Barasa for Governor - Bungoma County 2027">
+    <meta name="twitter:description" content="Engineering Bungoma's Future through digital transformation, youth empowerment, and sustainable development.">
+    <meta name="twitter:image" content="https://didmusbungoma.netlify.app/assets/images/barasa-500x751.jpeg">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="assets/images/mini_Cropped barasa.jpg" alt="Didmus Barasa">
+                <span>DIDMUS BARASA</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#vision" class="nav-link">Vision</a>
+                <a href="#agenda" class="nav-link">Agenda</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="pages/digital-infrastructure.html" class="nav-link">Digital Hub</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <!-- Particle Canvas -->
+    <canvas id="particleCanvas" class="particle-canvas"></canvas>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero animated-gradient">
+        <div class="hero-bg"></div>
+        <div class="hero-container container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="highlight">Didmus Barasa</span>
+                    <br>Governor Bungoma County 2027
+                </h1>
+                <p class="hero-subtitle">
+                    Engineering Bungoma's digital future through innovation, youth empowerment, 
+                    and sustainable development. Together, we build a prosperous county for all.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number" data-target="7">0</div>
+                        <div class="stat-label">Years in Parliament</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number" data-target="50">0</div>
+                        <div class="stat-label">Projects Delivered</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number" data-target="100000">0</div>
+                        <div class="stat-label">Lives Impacted</div>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#agenda" class="btn btn-primary">View Agenda</a>
+                    <a href="#contact" class="btn btn-secondary">Join Campaign</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/images/barasa-500x751.jpeg" alt="Didmus Barasa">
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision" class="vision">
+        <div class="container">
+            <div class="section-header">
+                <h2>My Vision for Bungoma</h2>
+                <p>Building on the success of digital transformation initiatives</p>
+            </div>
+            
+            <div class="vision-grid">
+                <div class="vision-card">
+                    <div class="vision-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3>Connecting Bungoma to the World</h3>
+                    <p>County-wide fiber optic network, free public WiFi, mobile learning vans, and digital service delivery for every ward</p>
+                    <a href="pages/digital-infrastructure.html" class="vision-link">Learn More</a>
+                </div>
+                
+                <div class="vision-card">
+                    <div class="vision-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Unleashing Youth Power</h3>
+                    <p>100 digital hubs, boda boda empowerment, small business support, and innovation funding for young entrepreneurs</p>
+                    <a href="pages/youth-empowerment.html" class="vision-link">Learn More</a>
+                </div>
+                
+                <div class="vision-card">
+                    <div class="vision-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Feeding Bungoma, Feeding Kenya</h3>
+                    <p>Smart farming, soya beans cultivation, agri-processing facilities, and direct market access for farmers</p>
+                    <a href="pages/agriculture.html" class="vision-link">Learn More</a>
+                </div>
+                
+                <div class="vision-card">
+                    <div class="vision-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Health is Wealth</h3>
+                    <p>Modernized facilities, telemedicine services, community health workers, and affordable insurance coverage</p>
+                    <a href="pages/healthcare.html" class="vision-link">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agenda Section -->
+    <section id="agenda" class="agenda">
+        <div class="container">
+            <div class="section-header">
+                <h2>5-Point Development Agenda</h2>
+                <p>Comprehensive transformation plan for Bungoma County</p>
+            </div>
+            
+            <div class="agenda-items">
+                <div class="agenda-item">
+                    <div class="agenda-number">01</div>
+                    <div class="agenda-content">
+                        <h3>"Connecting Bungoma to the World"</h3>
+                        <p>Revolutionary digital infrastructure bringing high-speed internet, e-learning hubs, and smart services to every corner of our county</p>
+                        <ul>
+                            <li>Free public learning areas in all community centers</li>
+                            <li>Mobile digital learning vans reaching rural areas</li>
+                            <li>Smart county services reducing corruption</li>
+                        </ul>
+                        <a href="pages/digital-infrastructure.html" class="agenda-link">View Full Plan</a>
+                    </div>
+                </div>
+                
+                <div class="agenda-item">
+                    <div class="agenda-number">02</div>
+                    <div class="agenda-content">
+                        <h3>"Unleashing the Power of Our Young People"</h3>
+                        <p>Comprehensive youth empowerment through digital skills, business support, and innovative financing solutions</p>
+                        <ul>
+                            <li>Boda boda empowerment with electric conversion</li>
+                            <li>Small business grants and mentorship</li>
+                            <li>Export-ready youth enterprises</li>
+                        </ul>
+                        <a href="pages/youth-empowerment.html" class="agenda-link">View Full Plan</a>
+                    </div>
+                </div>
+                
+                <div class="agenda-item">
+                    <div class="agenda-number">03</div>
+                    <div class="agenda-content">
+                        <h3>"Feeding Bungoma, Feeding Kenya"</h3>
+                        <p>Agricultural transformation through smart farming, high-value crops, and direct market access platforms</p>
+                        <ul>
+                            <li>Soya beans and macadamia cultivation programs</li>
+                            <li>Agri-processing facilities for value addition</li>
+                            <li>Digital platforms bypassing middlemen</li>
+                        </ul>
+                        <a href="pages/agriculture.html" class="agenda-link">View Full Plan</a>
+                    </div>
+                </div>
+                
+                <div class="agenda-item">
+                    <div class="agenda-number">04</div>
+                    <div class="agenda-content">
+                        <h3>"Health is Wealth"</h3>
+                        <p>Comprehensive healthcare transformation with modern facilities, telemedicine, and community-based programs</p>
+                        <ul>
+                            <li>Modernized health facilities with diagnostic equipment</li>
+                            <li>County-based affordable insurance coverage</li>
+                            <li>Mental health and wellness programs</li>
+                        </ul>
+                        <a href="pages/healthcare.html" class="agenda-link">View Full Plan</a>
+                    </div>
+                </div>
+                
+                <div class="agenda-item">
+                    <div class="agenda-number">05</div>
+                    <div class="agenda-content">
+                        <h3>"Building the Foundations of Prosperity"</h3>
+                        <p>Modern infrastructure development with all-weather roads, reliable electricity, and smart urban planning</p>
+                        <ul>
+                            <li>All-weather road network to every village</li>
+                            <li>Renewable energy projects and solar farms</li>
+                            <li>Green Bungoma environmental program</li>
+                        </ul>
+                        <a href="pages/infrastructure.html" class="agenda-link">View Full Plan</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ongoing Projects & Achievements</h2>
+                <p>Building on proven track record of delivery</p>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/Didmus-ICAO-visit.jpg" alt="Digital Hub Project">
+                    </div>
+                    <div class="project-content">
+                        <h3>Digital Skills Hubs Network</h3>
+                        <p>26 operational hubs training 4,500+ youth in digital skills across all constituencies</p>
+                        <div class="project-stats">
+                            <span>4,500+ Trained</span>
+                            <span>26 Hubs Active</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/GaQSVWjWgAAOA2W.jpg" alt="WiFi Access Points">
+                    </div>
+                    <div class="project-content">
+                        <h3>Free WiFi Initiative</h3>
+                        <p>75 access points providing free internet to 65,000+ users in schools, hospitals, and markets</p>
+                        <div class="project-stats">
+                            <span>65,000+ Users</span>
+                            <span>75 Access Points</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/Didmus-Barasa-Finance-Bill.jpg" alt="Smart Agriculture">
+                    </div>
+                    <div class="project-content">
+                        <h3>Smart Agriculture Program</h3>
+                        <p>2,800+ farmers trained in modern techniques with market linkages for high-value crops</p>
+                        <div class="project-stats">
+                            <span>2,800+ Farmers</span>
+                            <span>700 Women-led</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Join the Movement</h2>
+                <p>Be part of Bungoma's transformation journey</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get Involved</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+254 700 000 000</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@didmusbarasa.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Kimilili, Bungoma County</span>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <form class="contact-form">
+                    <h3>Join Our Campaign</h3>
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="tel" placeholder="Phone Number" required>
+                    <select required>
+                        <option value="">How would you like to help?</option>
+                        <option value="volunteer">Volunteer</option>
+                        <option value="donate">Donate</option>
+                        <option value="organize">Organize Events</option>
+                        <option value="spread">Spread the Word</option>
+                    </select>
+                    <textarea placeholder="Your Message" rows="4"></textarea>
+                    <button type="submit" class="btn btn-primary">Join Campaign</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/images/mini_Cropped barasa.jpg" alt="Didmus Barasa">
+                    <h3>DIDMUS BARASA</h3>
+                    <p>Engineering Bungoma's Future</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#vision">Vision</a>
+                    <a href="#agenda">Agenda</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Didmus Barasa Campaign. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/particles.js"></script>
+    <script src="assets/js/ai-chat.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
