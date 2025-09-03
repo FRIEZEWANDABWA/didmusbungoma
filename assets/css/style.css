@@ -68,8 +68,8 @@ body {
     color: var(--text-primary);
     border: 2px solid var(--border-color);
     border-radius: 50%;
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -78,6 +78,12 @@ body {
     margin-right: 10px;
     position: relative;
     overflow: hidden;
+    touch-action: manipulation;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    min-width: 44px;
+    min-height: 44px;
 }
 
 .theme-toggle:hover {
@@ -836,17 +842,29 @@ body {
     display: none;
     flex-direction: column;
     cursor: pointer;
-    padding: 5px;
+    padding: 8px;
     z-index: 1001;
+    background: transparent;
+    border: none;
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
+    align-items: center;
+    touch-action: manipulation;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .nav-toggle span {
+    display: block;
     width: 25px;
     height: 3px;
     background: var(--text-primary);
     margin: 3px 0;
     transition: 0.3s;
     border-radius: 2px;
+    transform-origin: center;
 }
 
 .nav-toggle.active span:nth-child(1) {
