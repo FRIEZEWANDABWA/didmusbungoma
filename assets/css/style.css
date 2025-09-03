@@ -97,8 +97,9 @@ body {
     transform: scale(0.95);
 }
 
-.theme-toggle i {
-    font-size: 1.1rem;
+.theme-icon {
+    font-size: 1.4rem;
+    line-height: 1;
     transition: transform 0.3s ease;
 }
 
@@ -119,8 +120,8 @@ body {
         border-width: 2px;
     }
     
-    .theme-toggle i {
-        font-size: 1rem;
+    .theme-icon {
+        font-size: 1.2rem;
     }
     
     .nav-actions {
@@ -235,16 +236,38 @@ body {
 
 .nav-toggle {
     display: none;
-    flex-direction: column;
+    background: none;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
     cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
 }
 
-.nav-toggle span {
-    width: 25px;
-    height: 3px;
-    background: var(--text-primary);
-    margin: 3px 0;
-    transition: 0.3s;
+.nav-toggle:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.nav-toggle:active {
+    transform: scale(0.95);
+}
+
+.hamburger-icon {
+    font-size: 1.4rem;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+
+.nav-toggle.active .hamburger-icon {
+    transform: rotate(90deg);
 }
 
 /* Hero Section */
