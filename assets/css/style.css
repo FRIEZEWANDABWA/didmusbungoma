@@ -66,21 +66,60 @@ body {
 .theme-toggle {
     background: var(--bg-card);
     color: var(--text-primary);
-    border: 1px solid var(--border-color);
+    border: 2px solid var(--border-color);
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
     margin-right: 10px;
+    position: relative;
+    overflow: hidden;
 }
 
 .theme-toggle:hover {
     background: var(--primary-color);
     color: white;
+    border-color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+.theme-toggle i {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+/* Ensure theme toggle is always visible */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1001;
+}
+
+/* Mobile theme toggle improvements */
+@media (max-width: 768px) {
+    .theme-toggle {
+        width: 38px;
+        height: 38px;
+        margin-right: 8px;
+        border-width: 2px;
+    }
+    
+    .theme-toggle i {
+        font-size: 1rem;
+    }
+    
+    .nav-actions {
+        margin-right: 0.5rem;
+    }
 }
 
 /* Animated Gradients */
@@ -141,16 +180,7 @@ body {
 }
 
 /* Navigation */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(15, 23, 42, 0.95);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    padding: 1rem 0;
-    transition: all 0.3s ease;
-}
+
 
 .nav-container {
     max-width: 1200px;
@@ -716,7 +746,58 @@ body {
     color: var(--text-secondary);
 }
 
-/* Responsive Design */
+/* Mobile Navigation */
+.nav-menu.mobile-active {
+    display: flex;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: var(--bg-secondary);
+    flex-direction: column;
+    padding: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+}
+
+.nav-menu.mobile-active .nav-link {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Sticky Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 0.8rem 0;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navbar.scrolled {
+    background: rgba(15, 23, 42, 0.98);
+    padding: 0.5rem 0;
+}
+
+/* Mobile-First Responsive Design */
 @media (max-width: 768px) {
     .nav-menu {
         display: none;
@@ -726,17 +807,109 @@ body {
         display: flex;
     }
     
+
+    
+    .hero {
+        padding: 6rem 0 2rem;
+        min-height: 90vh;
+    }
+    
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 2rem;
+    }
+    
+    .hero-title {
+        font-size: clamp(1.8rem, 8vw, 3rem);
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
+        margin-bottom: 1.5rem;
     }
     
     .hero-stats {
         justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .stat {
+        min-width: 120px;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 0.8rem;
+        padding: 0 1rem;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+        font-size: 1rem;
+    }
+    
+    .hero-image img {
+        max-width: 280px;
+    }
+    
+    .vision-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+    
+    .vision-card {
+        padding: 1.5rem;
+    }
+    
+    .vision-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .vision-card p {
+        font-size: 0.9rem;
+    }
+    
+    .agenda-items {
+        padding: 0 1rem;
+    }
+    
+    .agenda-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+    
+    .agenda-number {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
     }
     
     .contact-grid {
         grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1rem;
     }
     
     .footer-content {
@@ -748,22 +921,75 @@ body {
     .footer-links {
         flex-wrap: wrap;
         justify-content: center;
+        gap: 1rem;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+        padding: 0 1rem;
+    }
+    
+    .section-header p {
+        padding: 0 1rem;
     }
 }
 
 @media (max-width: 480px) {
+    .nav-container {
+        padding: 0 15px;
+    }
+    
+    .nav-logo {
+        font-size: 1rem;
+    }
+    
+    .nav-logo img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .hero {
+        padding: 5rem 0 1rem;
+    }
+    
+    .hero-title {
+        font-size: clamp(1.5rem, 7vw, 2.5rem);
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+    
     .hero-stats {
         flex-direction: column;
         gap: 1rem;
+        align-items: center;
     }
     
-    .btn {
+    .stat {
         width: 100%;
-        justify-content: center;
+        max-width: 200px;
     }
     
-    .agenda-item {
-        flex-direction: column;
-        text-align: center;
+    .vision-card {
+        padding: 1rem;
+    }
+    
+    .vision-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .agenda-number {
+        font-size: 2rem;
+    }
+    
+    .container {
+        padding: 0 10px;
     }
 }

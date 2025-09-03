@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initThemeToggle();
     initProgressBar();
     initScrollReveal();
+    initMobileOptimizations();
+    preventHorizontalScroll();
 });
 
 // Navigation functionality
@@ -16,11 +18,12 @@ function initNavigation() {
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
+    const navbar = document.querySelector('.navbar');
 
     // Mobile menu toggle
     if (navToggle) {
         navToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
+            navMenu.classList.toggle('mobile-active');
             navToggle.classList.toggle('active');
         });
     }
@@ -28,20 +31,32 @@ function initNavigation() {
     // Close mobile menu when clicking on links
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
+            navMenu.classList.remove('mobile-active');
             navToggle.classList.remove('active');
         });
     });
 
-    // Navbar scroll effect
-    window.addEventListener('scroll', () => {
-        const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 100) {
-            navbar.style.background = 'rgba(15, 23, 42, 0.98)';
-        } else {
-            navbar.style.background = 'rgba(15, 23, 42, 0.95)';
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+            navMenu.classList.remove('mobile-active');
+            navToggle.classList.remove('active');
         }
     });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Ensure navbar is always visible
+    navbar.style.position = 'fixed';
+    navbar.style.top = '0';
+    navbar.style.zIndex = '1000';
 }
 
 // Smooth scrolling for navigation links
@@ -281,9 +296,60 @@ function hideLoading(loader) {
     }
 }
 
+// Mobile Optimizations
+function initMobileOptimizations() {
+    // Prevent zoom on input focus (iOS)
+    const inputs = document.querySelectorAll('input, textarea, select');
+    inputs.forEach(input => {
+        input.addEventListener('focus', () => {
+            if (window.innerWidth < 768) {
+                const viewport = document.querySelector('meta[name=viewport]');
+                viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
+            }
+        });
+        
+        input.addEventListener('blur', () => {
+            if (window.innerWidth < 768) {
+                const viewport = document.querySelector('meta[name=viewport]');
+                viewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
+            }
+        });
+    });
+    
+    // Improve touch targets
+    const touchTargets = document.querySelectorAll('button, .btn, .nav-link, .vision-link');
+    touchTargets.forEach(target => {
+        if (window.innerWidth < 768) {
+            target.style.minHeight = '44px';
+            target.style.minWidth = '44px';
+        }
+    });
+    
+    // Add touch feedback
+    touchTargets.forEach(target => {
+        target.addEventListener('touchstart', () => {
+            target.style.opacity = '0.7';
+        });
+        
+        target.addEventListener('touchend', () => {
+            setTimeout(() => {
+                target.style.opacity = '1';
+            }, 100);
+        });
+    });
+}
+
 // Initialize page loading
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
+    
+    // Adjust viewport for mobile
+    if (window.innerWidth < 768) {
+        const viewport = document.querySelector('meta[name=viewport]');
+        if (viewport) {
+            viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, user-scalable=yes');
+        }
+    }
 });
 
 // Theme Toggle
@@ -291,7 +357,15 @@ function initThemeToggle() {
     const themeToggle = document.getElementById('themeToggle');
     const html = document.documentElement;
     
+    // Load saved theme or default to dark
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    html.setAttribute('data-theme', savedTheme);
+    
     if (themeToggle) {
+        // Set initial icon
+        const icon = themeToggle.querySelector('i');
+        icon.className = savedTheme === 'light' ? 'fas fa-sun' : 'fas fa-moon';
+        
         themeToggle.addEventListener('click', () => {
             const currentTheme = html.getAttribute('data-theme');
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
@@ -299,8 +373,12 @@ function initThemeToggle() {
             html.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             
-            const icon = themeToggle.querySelector('i');
-            icon.className = newTheme === 'light' ? 'fas fa-sun' : 'fas fa-moon';
+            // Update icon with animation
+            icon.style.transform = 'scale(0)';
+            setTimeout(() => {
+                icon.className = newTheme === 'light' ? 'fas fa-sun' : 'fas fa-moon';
+                icon.style.transform = 'scale(1)';
+            }, 150);
         });
     }
 }
@@ -344,3 +422,11 @@ document.addEventListener('visibilitychange', () => {
         document.title = 'Didmus Barasa for Governor - Bungoma County 2027';
     }
 });
+
+// Prevent horizontal scroll on mobile
+function preventHorizontalScroll() {
+    document.body.style.overflowX = 'hidden';
+    document.documentElement.style.overflowX = 'hidden';
+}
+
+preventHorizontalScroll();

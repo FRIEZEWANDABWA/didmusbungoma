@@ -136,16 +136,24 @@ class AIChatAssistant {
     }
     
     showInitialPopup() {
+        // Show chat immediately when page loads
         setTimeout(() => {
             if (!this.isOpen) {
                 this.toggleChat();
+                // Auto-minimize after 4 seconds
                 setTimeout(() => {
                     if (this.isOpen) {
                         this.closeChat();
+                        // Show notification badge
+                        const notification = document.getElementById('chatNotification');
+                        if (notification) {
+                            notification.style.display = 'flex';
+                            notification.textContent = '!';
+                        }
                     }
-                }, 5000);
+                }, 4000);
             }
-        }, 3000);
+        }, 1000);
     }
     
     toggleChat() {
@@ -325,6 +333,49 @@ const chatCSS = `
     display: none;
     flex-direction: column;
     overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+@media (max-width: 768px) {
+    .ai-chat {
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .chat-toggle {
+        padding: 12px 16px;
+        font-size: 0.9rem;
+    }
+    
+    .chat-badge {
+        font-size: 0.8rem;
+    }
+    
+    .chat-window {
+        width: calc(100vw - 30px);
+        height: 400px;
+        bottom: 60px;
+        right: -15px;
+        border-radius: 10px;
+    }
+    
+    .chat-messages {
+        padding: 10px;
+    }
+    
+    .message-content {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+    
+    .quick-questions {
+        gap: 3px;
+    }
+    
+    .quick-question {
+        font-size: 11px;
+        padding: 4px 8px;
+    }
 }
 
 .chat-header {
@@ -460,12 +511,7 @@ const chatCSS = `
     to { transform: translateY(0); opacity: 1; }
 }
 
-@media (max-width: 768px) {
-    .chat-window {
-        width: 300px;
-        height: 400px;
-    }
-}
+
 `;
 
 // Add chat CSS to document
