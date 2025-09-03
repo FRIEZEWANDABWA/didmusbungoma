@@ -39,13 +39,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Event listeners for navigation
     if (navToggle) {
         navToggle.addEventListener('click', toggleNav);
-        navToggle.addEventListener('touchstart', toggleNav, { passive: true });
     }
     
     // Event listeners for theme toggle
     if (themeToggle) {
         themeToggle.addEventListener('click', toggleTheme);
-        themeToggle.addEventListener('touchstart', toggleTheme, { passive: true });
     }
     
     // Close mobile menu when clicking nav links
@@ -57,6 +55,18 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    
+    // Make logo clickable to go home
+    const navLogo = document.querySelector('.nav-logo');
+    if (navLogo) {
+        navLogo.style.cursor = 'pointer';
+        navLogo.addEventListener('click', () => {
+            window.location.href = '#home';
+            if (navMenu.classList.contains('active')) {
+                toggleNav();
+            }
+        });
+    }
     
     // Initialize theme from localStorage
     const savedTheme = localStorage.getItem('theme') || 'dark';
